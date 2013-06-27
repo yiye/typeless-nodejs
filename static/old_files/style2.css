@@ -1,0 +1,162 @@
+body{
+background: url("site_bg.jpg") repeat fixed 0 0 transparent;
+font-size:9pt;
+font-family:Tahoma,Verdana,STHeiTi,simsun,sans-serif;
+text-align:center;
+}
+a:hover,a:visited,a:link,a:active {text-decoration:none;
+color:white;}
+.page-top-holder{
+	margin-bottom:10px;
+	border-bottom:1px solid #DDDDDD;
+
+}
+.page-head-holder, .page-container-holder, .page-foot-holder {
+    margin: 0 auto;
+    width: 970px;
+}
+.page-head-holder{
+
+}
+#content,#header,#container,#footer,.con_content,#con_con{
+    margin: 0 auto;
+    width: 980px;
+}
+#content{
+height:100%;
+}
+#header img{
+float:left;
+height:60px;
+margin-left:20px;
+border:0px;
+}
+.logo,.login{
+	height:90px;
+	width:200px;
+	line-height: 90px; 
+	overflow: hidden; 
+	font-weight:bold;
+	color:white;
+
+}
+.logo{
+	margin-left:20px;
+	font-size:62px;
+	float:left;
+}
+.login{
+	margin-right:20px;
+	font-size:55px;
+	float:right;
+}
+.room_list
+{
+	clear:both;
+	float:left;
+	margin-left:400px;
+
+}
+#content{
+
+}
+#header{
+	background-color:#FFFFFF;
+	height:60px;
+}
+
+#container
+{
+	clear:both;
+	background-color:white;
+	height:490px;
+
+  background-image: url("3steps.png");
+  background-repeat:no-repeat;
+  background-position:bottom;
+
+}
+.cs{
+	clear:both;
+}
+#con_con{
+	clear:both;
+	background-color:white;
+
+
+
+}
+
+
+#nav1,#nav2,#nav3{
+height:100px;
+width:100px;
+font-size:50px;
+color:white;
+
+float:left;
+margin-top:35px;
+}
+#nav1{
+margin-left:212px;
+}
+#nav2,#nav3{
+margin-left:132px;
+}
+
+#aa,#bb,#cc{
+width:500px;
+margin-top:45px;
+color:white;
+margin-left:auto;
+margin-right:auto;
+}
+#aa{
+font-size:25px;
+}
+#bb,#cc
+{
+font-size:25px;
+}
+#roomnumber{
+height:40px;
+width:100px;
+font-size:30px;
+text-align:center;
+}
+.submit{
+height:40px;
+width:100px;
+}
+#id,#password{
+width:500px;
+height:45px;
+font-size:40px;
+}
+#password{
+margin-top:10px;
+}
+
+
+.con_title,#footer{
+	font-size:40px;
+	color:#d7adff;
+	font-family: Tahoma, Verdana, STHeiTi, simsun, sans-serif;
+}
+
+#footer{
+	background-color:#f6eaff;
+	height:40px;
+	line-height: 40px; 
+	font-size:24pt;
+	overflow: hidden; 
+
+}
+#floater	{float:left; height:50%; margin-bottom:-120px;}
+.nav
+{
+	
+	margin-top:300px;}
+.con_content{
+	
+}

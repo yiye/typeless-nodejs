@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title>typeless</title>
+		<link href='http://fonts.googleapis.com/css?family=Jolly+Lodger' rel='stylesheet' type='text/css'>
+		<link href='/static/style.css' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="/static/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+					$("#step1").click(function(){
+						$("#right1").show();
+						$("#right2").hide();
+						$("#right3").hide();
+						$("#step1").addClass("current");
+						$("#step2").removeClass();
+						$("#step3").removeClass();
+						});
+					$("#step2").click(function(){
+						$("#right1").hide();
+						$("#right2").show();
+						$("#right3").hide();
+						$("#step1").removeClass();
+						$("#step2").addClass("current");
+						$("#step3").removeClass();
+						});
+					$("#step3").click(function(){
+						$("#right1").hide();
+						$("#right2").hide();
+						$("#right3").show();
+						$("#step1").removeClass();
+						$("#step2").removeClass();
+						$("#step3").addClass("current");
+						});
+
+
+					//placeholder
+					(function() {
+					 var trgoofi = {
+					 // placeholderClassName: class name that define the css to control the style
+					 // attributeName: attribute name in the input field
+placeholder : function(placeholderClassName, attributeName) {
+$("input").each(function() {
+	var $this = $(this);
+	if ($this.attr(attributeName) != undefined) {
+	// deactivate placeholder
+	$this.focus(function() {
+		if ($this.val() == $this.attr(attributeName)) {
+		$this.removeClass(placeholderClassName);
+		$this.val("");
+		}
+		});
+	// activate placeholder
+	$this.blur(function() {
+		if ($this.val() == "") {
+		$this.addClass(placeholderClassName);
+		$this.val($this.attr(attributeName));
+		}
+		});
+	// initialize placeholder
+	$this.blur();
+	}
+	});
+			  }
+					 };
+					 window.trgoofi = trgoofi;
+					})();
+
+
+			});
+
+
+
+					function geturl(){
+						var number=document.getElementById("roomnumber").value;
+						//如果房间号为空，默认进入房间1
+						if(!number)
+							number=1;
+						var url="room/"+number;
+						document.location=url;
+					}
+					function geturl2(){
+						var url="newroom";
+						document.location=url;
+					}
+
+		</script> 
+
+
+	</head>
+
+	<body id="services">
+
+		<div id="wrap">
+
+			<div id="content">
+				<a id="logo"></a>
+				<div id="title">
+					<h1>Typeless express more</h1>
+				</div>
+				<div id="sub-content">
+					<div id="left">
+						<ul id="sub-nav">
+
+							<li id="step1" class="current"><a>试一试
+							</a></li>											
+							<li id="step2"><a>注册之
+							</a></li>												
+							<li id="step3"><a>分享之
+							</a></li>
+
+						</ul>
+					</div>
+					<div id="right">
+						<div style="display:block;" id="right1" class="copy">
+							<p style="text-align:center;font-size:32px;margin-top:40px">先创建房间，再进入</p>
+							<input placeholder="请输入要进入的房间号" name="roomnumber" type="text" id="roomnumber" value="" style="height:55px;font-size:28px;margin-left:50px;margin-top:10px;" />
+							<a class="button" href="javascript:void(0)" onclick="geturl();" style="margin-left:5px">进入</a>
+							<br />
+							<div style="margin-top:50px;">
+							<a class="button" href="newroom" style="width:370px">猛击创建房间</a>
+							</div>
+						</div>
+						<div style="display:none;" id="right2" class="copy">
+							<input placeholder="请输入用户名" name="username" type="text" id="username" value="" style="height:55px;width:400px;font-size:28px;margin-left:50px;margin-top:40px;vertical-align:bottom;" />
+							<input placeholder="请输入密码" name="roomnumber" type="password" id="roomnumber" value="" style="height:55px;width:400px;font-size:28px;margin-left:50px;margin-top:20px;vertical-align:bottom;" />
+							<div style="margin-top:40px">
+							<a href="#" class="button" style="height:28px;width:50px;margin-left:50px;font-size:20px">登录</a>
+							<a href="#" class="button" style="height:28px;width:50px;margin-left:215px;font-size:20px">注册</a>
+							</div>
+
+
+
+						</div>
+						<div style="display:none;" id="right3" class="copy">
+							<p style="font-size:28px;text-align:center;margin-top:80px">分享到</p>
+
+							<div id="jiathis_style_32x32" style="margin-top:50px;margin-left:132px;">
+								<a class="jiathis_button_fb"></a>
+								<a class="jiathis_button_twitter"></a>
+								<a class="jiathis_button_myspace"></a>
+								<a class="jiathis_button_gmail"></a>
+								<a class="jiathis_button_douban"></a>
+								<a class="jiathis_button_renren"></a>
+								<a class="jiathis_button_qzone"></a>
+							</div>
+							<script type="text/javascript" src="http://v1.jiathis.com/code/jia.js" charset="utf-8"></script>
+						</div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div id="footer">
+
+
+
+
+				</div>
+
+			</div>
+		</body>
+
+	</html>

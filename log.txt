@@ -1,0 +1,109 @@
+Bug repoet list:
+============================
+
+
+Change log:
+============================
+date: 2012.8.27 18:16
+name: Dawn
+1.前端代码尝试性合并，Style.css中的url(img/...) 均替换为 ur(/static/img/...) 以便能正确找到图片。页面效果还未全部完成，访问 http://127.0.0.1:8888/typeless可以看到效果。
+2. 新的ajax_api。
+3. typeless.py中，依旧小bug修正。
+
+date: 2012.8.24 12:18
+name: Dawn
+1.set_friend,fetch_msg 前后端协议稍微修改了一下（就是ajax api），set_friend 里面的命令稍微修改。
+2.修改几处小bug。
+3.set_friend，需要做一点代码优化，增加一些额外的返回信息（比如请求了不存在的人为好友）。下一步是房间操作的handlers，然后数据全都变成unicode。
+
+4.(同日 18:10) handlers写完了，很多未测试代码，没按照api规范写，但是均为合理修改，稍后会根实际代码修改ajax_api。
+	注意：对于单人一个人绘图的方式，设置为此模式后，仅需向房间内用websocket广播即可，客户端接到广播后，可以立即发起room_info的ajax请求，以确认，是否真的修改了。
+
+date: 2012.8.17 14:40
+name: Dawn
+1.修改typeless.py 和 chat_server.py 写好了他们之间进程见通信的框框。
+2.这个进程间通信 只支持 linux/unix系统，pyzmq的安装和 使用其进行进程间通信的方式，见branches中的那个新文件。
+
+date: 2012.8.14 19:04
+name: Dawn
+1.处理websocket的chat_server.py和处理其他请求的tp.py分开来，两个进程。
+2. ajax api 文档格式改了一点
+
+date: 2012.8.13 18:04
+name: Dawn
+1.tp.py 和 index.html 简单写了个AjaxHandler，日志用logging模块，熟悉下js。jquery1.8 加到static/script目录下,markdown.css加到static/style目录下。
+2.接下来就是具体实现ajax api里定义的东西了。
+
+date: 2012.8.2 早上的四次提交
+name: Dawn
+1.旧代码移动到tags下面。trunk下面的文件大清理，准备开始写新代码。各目录内容见readme.txt。
+
+1.0 及之前
+============================
+Bug  report list:
+
+date: 2012.5.11 1:05
+name: Feng Yuyao
+
+1.如果房间不存在现在只是向websocket打印消息，并未在前端体现，详见代码152行
+
+date: 2012.4.25 23:13
+name: Feng Yuyao
+
+FIX 1. If use number bigger than ROOM_POOL_NUM to access a room directly, 
+server will throw an exception.
+FIX 2. Use room num of a unexistive room, it will got in the room directly
+instead of report the room doesn't exist. The only to build a room must be
+'/new/room/'
+
+
+Change log:
+
+date: 2012.7.5 19:27
+name: Dawn Zhang
+Changes: 
+  1.相对比较完整的jsonless模块，专为typeless的消息格式设计的，对外两个接口jsonless.less() jsonless.more() 前者压缩，后者解压。
+  2.把消息中重复出现的key名全都加到jsonless.py 中的keylist中，消息格式不要轻易改动……。
+
+date: 2012.7.5 19:27
+name: Dawn Zhang
+Changes: 
+  1.不完整有bug的jsonless —— typeless 的 json 压缩工具，以后要同时有js版的jsonless ，思路就是给一个已知的key列表，然后把所有key全都换成数字，以节省空间，很简单的……。
+
+date: 2012.6.22 17:05
+name: Dawn Zhang
+Changes: 
+  1.在myapp.py 和 typeless.py中，增加templates路径的定义，并将*.html全部移动到templates/下，这是个无痛的修改，其他一切照常即可，以后的html文件均放在templates中。
+
+
+date: 2012.5.12 23:24
+name: Feng Yuyao
+Changes: 
+  1.添加了房间不存在时的宕机画面
+
+date: 2012.5.11 1:05
+name: Feng Yuyao
+Changes: 
+  1.修正了一些bug
+
+date: 2012.5.11 1:05
+name: Feng Yuyao
+Changes: 
+  1. 既然不在代码里就不用坑爹的英文了。
+  2. 重构了所有的代码，将现有的几个类基本上从功能上完全分离，减少了耦合度。重构以后GuestAgent指和自己的Room打交道，Room只和Room_manager打交道。除了暴露出来的公共方法外在     没有访问其他的成员变量
+  3. 取消了所有的打印输出。使用异常替代。所有异常定义在 typeless_exce.py 里。
+  4. 所有类名一律改为首字母大写驼峰标识，规范代码。
+
+date: 2012.4.25 23:13
+name: Feng Yuyao
+Changes: 
+  1. Delete all command uesed to convert room_num to int. I 
+     think since we use dict, we can use raw string as the key.
+     That may improve the efficent.
+  2. Unify the var name 'room_nu' to 'room_num'
+  3. Complete the function of 'room_pool'. i.e. the room pool. If the room
+     pool is used up, the room manager will add an extra room for it. And 
+     when the last guest leave this room. The room will be del. 
+     Mainly rewrite: GuestAgent.on_close, room_manager.recieve_new_guest
+  4. Complete the request for '/newroom'. Add new class RoomCreator.
+  5. Complete the function of provide static files. use the url 'host/static/filname'

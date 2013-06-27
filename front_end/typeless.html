@@ -1,0 +1,428 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link type="text/css" rel="stylesheet" href="static/Style.css"></link>
+<link type="text/css" rel="stylesheet" href="static/colorpicker.css"/>
+<script type="text/javascript" src="script/jquery-1.8.0.min.js"></script>
+<script type="text/javascript" src="script/apparence.js"></script>
+
+<title>typeless</title>
+</head>
+
+<body>
+
+<!--账户登录-->
+	<div class="header" style="display:none;">
+<!--    	<div id="input_r_num">   		
+            <input type="text" placeholder="&nbsp;输入房间号"/>
+            <input type="button" class="check_r_num" />
+         </div>-->
+        <div id="link">
+        	<a href="#enter_form" id="enter_pop"><span id="menu_enter"></span><label>房间</label></a>
+        	<a href="#login_form" id="login_pop"><span id="menu_login"></span><label>登录</label></a>
+        	<a href="#join_form" id="join_pop"><span id="menu_regist"></span><label>注册</label></a>
+        </div>
+        <div id="blank"><div id="blank_in"></div></div>
+    </div>
+      
+      
+<!-- 弹出的透明灰度面-->
+
+<!--房间设置-->   
+    <a href="#x"  class="overlay" id="remake_form"></a>
+    <div class="popup">
+    	<a class="close_border" href="#close"></a>
+        <div class="sl_shape"><div><span></span></div></div>
+        <span>房间设置</span>
+        <div>
+        	<label for="password">更改密码</label>
+            <input type="password" id="password" placeholder=""/>
+        </div>
+        <div class="checkbox">
+        	<span class="checked">
+        		<input type="radio" name="radiobutton" value="radiobutton" checked=""/>
+            </span>
+            <label>自由模式</label>
+            <span style="left:178px;">
+            <input type="radio" name="radiobutton" value="radiobutton" checked="checked"/>
+            </span>
+            <label style="left:200px;">单人执笔</label>
+        </div>
+        <input type="button" class="btn"  style="margin:10px auto auto 110px;" value="确定">
+        <a class="close" href="#close"></a>
+    </div> 
+    
+	<!--创建房间-->   
+    <a href="#x"  class="overlay" id="make_form"></a>
+    <div class="popup">
+    	<a class="close_border" href="#close"></a>
+        <div class="sl_shape"><div><span></span></div></div>
+        <span>创建房间</span>
+        <div>
+        	<label for="password">密&nbsp;&nbsp;&nbsp;码</label>
+            <input type="password" id="password" placeholder=""/>
+        </div>
+         <div class="checkbox">
+        	<span>
+        		<input type="radio" name="radiobutton" value="radiobutton" checked=""/>
+            </span>
+            <label>自由模式</label>
+            <span  class="checked" style="left:178px;">
+            <input type="radio" name="radiobutton" value="radiobutton" checked="checked"/>
+            </span>
+            <label style="left:200px;">单人执笔</label>
+        </div>
+        <input type="button" class="btn"  style="margin:10px auto auto 110px;" value="创建">
+        <a class="close" href="#close"></a>
+    </div> 
+    
+  	 <!--进入房间-->   
+    <a href="#x"  class="overlay" id="enter_form"></a>
+    <div class="popup">
+    	<a class="close_border" href="#close"></a>
+        <div class="sl_shape"><div><span></span></div></div>
+        <span>进入</span>
+    	<div>
+	    	<label for="login">房间号</label>            <input type="text" id="login" placeholder=""/>	
+        </div>
+        <div>
+        	<label for="password">密&nbsp;&nbsp;&nbsp;码</label>
+            <input type="password" id="password" placeholder=""/>
+        </div>
+        <input type="button" class="btn" style="margin:10px auto auto 110px;"  value="确定">
+<!--       <a href="#login_form" class="btn" style="height:26px;" id="login_pop">登录</a>-->
+        <a class="close" href="#close"></a>
+    </div>
+    
+  	 <!--登录-->   
+    <a href="#x"  class="overlay" id="login_form"></a>
+    <div class="popup">
+    	<a class="close_border" href="#close"></a>
+        <div class="sl_shape"><div><span></span></div></div>
+        <span>登录</span>
+    	<div>
+	    	<label for="login">用户名</label>            <input type="text" id="login" placeholder=""/>	
+        </div>
+        <div>
+        	<label for="password">密&nbsp;&nbsp;&nbsp;码</label>
+            <input type="password" id="password" placeholder=""/>
+        </div>
+        <input type="button" class="btn" value="登录">
+        <a href="#join_form" id="login_pop" class="btn" style="height:26px;">注册</a>
+        <a class="close" href="#close"></a>
+    </div>
+    
+    
+    <!--注册-->
+    <a href="#x" class="overlay" id="join_form"></a>
+    <div class="popup">
+    	<a class="close_border" href="#close"></a>
+        <div class="sl_shape"><div><span></span></div></div>
+        <span>注册</span> 
+        <div>
+        	<label for="email">用户名</label>
+            <input type="text" id="email" value=""/>
+        </div>
+        <div>
+        	<label for="pass">密&nbsp;&nbsp;&nbsp;码</label>
+            <input type="password" id="pass" value=""/>
+        </div>
+        <input type="button" class="btn" value="注册"/>
+        <a href="#login_form" class="btn" style="height:26px;" id="login_pop">登录</a>
+        <a class="close" href="#close"></a>
+     </div>
+     
+<!-- 登录注册界面--> 
+
+
+ 
+<!--账户信息-->    
+	<div class="user" style="display:block;">
+        <div class="user_choice">
+    		<a  href="#url" >
+            	<span class="abroom"></span>
+                <label>房间</label>
+            </a>
+    		<a  href="#url">
+            	<span class="mess"></span>
+                <label>消息</label></a>
+    		<a href="#url">
+            	<span class="account"></span>
+                <label>账户</label></a>
+        </div>
+        <div class="blank"><div></div></div>
+        <div class="user_head">
+            <div class="blank_d"><div></div></div>
+            <div class="head_photo"></div>            
+        </div>
+        <div class="room_num">
+             <span>#1932</span>
+        </div>
+	</div>
+  
+    
+<!--账户信息管理-->
+    <div class="user_M" style="display:block;">
+    	<ul>
+        	<li class="botm_div_line"><span id="u_M_data"></span><a href="#url">个人资料</a></li>
+            <li class="botm_div_line"><span id="u_M_rekey"></span><a href="#url">修改密码</a></li>
+            <li class="botm_div_line"><span id="u_M_mes"></span><a href="#url">站内短信</a></li>
+            <li class="botm_div_line"><span id="u_M_fix"></span><a href="#url">个人设置</a></li>
+            <li><span id="u_M_exit"></span><a href="#url">退出账号</a></li>
+        </ul>
+        <div><span></span></div>
+    </div> 
+  
+<!-- 房间管理未加入房间-->
+    <div class="user_M" style=" left:300px; display:block;">
+    	<ul style="height:85px;">
+        	<li class="botm_div_line"><span id="u_M_makerom"></span><a href="#make_form">创建房间</a></li>
+            <li><span id="u_M_enrom"></span><a href="#enter_form" id="enter_pop delete_bgc">加入房间</a></li>
+        </ul>
+        <div><span></span></div>
+    </div>  
+     
+<!-- 房间管理加入房间后-->
+     <!--房主-->
+    <div class="user_M" style=" left:500px; display:block;">
+    	<ul style="height:85px;">
+        	<li class="botm_div_line"><span id="u_M_exrom"></span><a href="#url">离开房间</a></li>
+            <li><span id="u_M_fixrom"></span><a href="#remake_form">房间设置</a></li>
+
+        </ul>
+        <div><span></span></div>
+    </div>
+    <!--非房主--> 
+     <div class="user_M" style=" left:700px; display:block;">
+    	<ul style="height:40px;">
+        	<li><span id="u_M_exrom"></span><a href="#url">离开房间</a></li>
+        </ul>
+        <div><span></span></div>
+    </div>
+    
+    
+<!-- 工具栏部分-->   
+
+	<div class="tool">
+    
+    	<!--流程图-->
+        	<!--展开前-->
+        <div class="rp tool_bef sheet_bef">
+            <div></div><div class="rp_in"></div>
+            <label id="s_sheet"></label>
+        </div>
+        	<!--展开后-->
+        <div class="sheet" style=" display:none;">
+        	<div class="lp sheet_lp">
+        		<div><span><label id="s_choose"></label></span></div>
+            	<div><span><label id="s_arrows"></label></span></div>
+            	<div><span><label id="s_parallelogram"></label></span></div>
+            	<div><span><label id="s_rectangle"></label></span></div>
+            	<div><span><label id="s_version"></label></span></div>
+            	<div><span><label id="s_dotted"></label></span></div>
+            </div>
+            <div class="rp">
+            	<div></div><div class="rp_in"></div>
+                <label id="s_sheet"></label>
+            </div>
+        </div>
+        
+        <!--画笔-->
+        	<!--展开前-->
+        <div class="rp pen_rp tool_bef pen_bef">
+            	<div></div><div class="rp_in"></div>
+                <label id="p_now"></label>
+        </div>
+       		<!-- 展开后-->  
+        <div class="pen pen_aft" style=" display:none; ">
+        	<div class="lp pen_lp">
+        		<div style=" background-color:#a2c3d2;"><div id="p_adjust"><div><span></span><label></label></div></div></div>
+            	<div style=" background-color:#a2c3d2;"><div id="p_width"></div></div>
+            	<div><span><label id="p_eraser"></label></span></div>
+            	<div><span><label id="p_pencil"></label></span></div>
+            	<div><span><label id="p_brush"></label></span></div>
+            	<div><span><label id="p_line"></label></span></div>
+            	<div><span><label id="p_rectangular"></label></span></div>
+                <div><span><label id="p_text"></label></span></div>
+            </div>
+            <div class="rp pen_rp">
+            	<div></div><div class="rp_in"></div>
+                <label id="p_now"></label>
+            </div>              
+        </div>
+        
+        <!--颜色-->
+        <!--展开前-->
+        <div class="rp color_rp tool_bef color_bef" >
+            	<div></div><div class="rp_in"></div>
+                <label id="c_board"></label>
+        </div> 
+        <div id="c_now" class="tool_bef c_now_bef"></div>
+        <!--展开后-->
+        <div class="color" style=" display:none;">
+        	<div class="lp color_lp" >
+        		<div><label id="c_allcolor"></label></div>
+            	<div><label id="c_red"></label></div>
+            	<div><label id="c_orange"></label></div>
+            	<div><label id="c_yellow"></label></div>
+            	<div><label id="c_green"></label></div>
+            	<div><label id="c_blue"></label></div>
+            </div>
+            <div class="rp color_rp" >
+            	<div></div><div class="rp_in"></div>
+                <label id="c_board"></label>
+            </div> 
+            <div id="c_now"></div>       
+        </div>
+      </div>
+   
+     <!-- 拾色器-->   
+     <div class="colorpicker" style="left:10px;bottom:85px; display:none;">
+     	<div class="colorpicker_color" style="background-color:rgb(0,17,255);">
+        	<div>
+            	<div style="left:70px; top:99px;"></div>
+            </div>
+        </div>
+        <div class="colorpicker_hue">
+        	<div style="top:51px;"></div>
+        </div>
+        <div class="colorpicker_new_color" style="background-color:rgb(46,49,87);"></div>
+        <div class="colorpicker_current_color" style="background-color:rgb(46,49,87);"></div>
+        <div class="colorpicker_hex"><input type="text" maxlength="6" size="6" /></div>
+        <div class="colorpicker_rgb_r colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div>
+        <div class="colorpicker_rgb_g colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div>
+        <div class="colorpicker_rgb_b colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div>
+        <div class="colorpicker_hsb_h colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div>
+        <div class="colorpicker_hsb_s colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div>
+        <div class="colorpicker_hsb_b colorpicker_field"><input type="text" maxlength="3" size="3" /><span></span></div>
+        <div class="colorpicker_submit"></div> 
+             
+     </div>     
+    
+<!-- 工具栏部分-->   
+      
+    
+<!-- 画板 -->  
+	<div class="drawing_board">
+    <canvas id="can"></canvas>
+    <canvas id="preCan"></canvas>
+    <div id="uml"></div>
+    </div>
+
+
+<!--好友列表-->    
+	<div class="friends" style="display:block;">
+    	<div class="f_up">
+        	<div class="f_up_left"><div></div></div>
+            <div class="f_up_right">
+            	<div id="add_f"></div>
+                <div id="f_list"></div>
+                <span>房间成员</span>
+            </div>
+        </div>
+<!--      好友列表拉开前-->
+        <div class="fm_bar" id="fm_bar_be" style="position:relative; left:76px; top:-2px;"><div></div><span class="fm_bar_btn" id="fm_bar_btn_be"></span></div>
+<!--        拉开后-->
+    	<div class="f_down" style=" display:none;">
+            <div class="rm_num"><div></div><label>好友</label><span>(15/187)</span></div>
+        	<div class="fm">
+            	<label><div id="fm_1"></div><span>绯色湖光</span></label>
+         		<label><div id="fm_2"></div><span>小猪</span></label>
+                <div id="fm_btn"></div>
+            </div>
+            <div class="fm_bar"><div></div><span class="fm_bar_btn_af" id="fm_bar_btn_af"></span></div>
+        </div>
+    </div>
+    
+    
+   <!-- 好友管理-->
+    <div class="friends_M" style=" display:none;">
+    	<ul>
+        	<li class="botm_div_line"><span id="f_M_please"></span><a href="#url">邀请</a></li>
+            <li class="botm_div_line"><span id="f_M_delete"></span><a href="#url">删除</a></li>
+            <li><span id="f_M_look"></span><a href="#url">查看</a></li>
+        </ul>
+        <div><span></span></div>
+    </div>
+    
+<!--房间成员-->
+	<div class="roommember" style="display:none;">
+    	<div class="f_up">
+        	<div class="f_up_left"><div></div></div>
+            <div class="f_up_right">
+            	<div id="add_f"></div>
+                <div id="f_list"></div>
+                <span>好友列表</span>
+            </div>
+        </div>
+    	<div class="rm_up">
+        	<div class="rm_num"><div></div><label>房间</label><span>(5/10)</span></div>
+            <div class="rm_head_pic">
+            	<div id="rm_1"></div><span>蔡琳</span>
+                <div id="rm_2"></div><span>顾平</span>
+                <div id="rm_3"></div><span>阳光女孩</span>
+                <div id="rm_4"></div><span>shirley</span>
+                <div id="rm_5"></div><span>朱凯</span>
+                <div id="rm_6"></div><span>萌妹纸</span>
+            </div>
+        </div>
+        <div class="rm_down">
+        	<div></div>
+            <span></span>
+        </div>
+    </div>
+	
+ 
+    
+<!--聊天栏-->
+<!--		展开前
+-->		<article class="talk_bef talk">
+        	<header>
+            	<div class="left_tj"><div class="left_tj_in"></div></div>
+                <div class="central_tj">
+                	<div id="t_talk"></div>
+                	<span>聊天</span>
+                    <div class="maxium"></div>
+                </div>
+                <div class="right_tj"><div class="right_tj_in"></div></div>
+            </header>
+        </article>
+<!--    展开后    
+-->    	<article class="talk talk_aft" style="display:none;">        
+            <header>
+            	<div class="left_tj"><div class="left_tj_in"></div></div>
+                <div class="central_tj">
+                	<div id="t_talk"></div>
+                	<span>聊天</span>
+                    <div class="minium"></div>
+                </div>
+                <div class="right_tj"><div class="right_tj_in"></div></div>
+            </header>
+            
+            <section>
+            	<article id="" class="dialogs" >
+                     <section class="every_mes">
+                     	 <div id="aim_head"><label>萌妹子：</label></div>
+                         <textarea id="include">我们来画画吧</textarea>
+                         <span>12-7-17 7:30</span>
+                     </section>
+                 </article>
+                 <footer>
+                        	<div class="divade">
+                            	<a href="nogo" title="添加表情"></a>
+                            </div>
+                            <form>
+                            	<textarea ></textarea>
+                                <a href="#nogo">发送</a>
+                            </form>
+                 </footer>
+             </section>
+        </article>
+<!--聊天栏-->
+
+
+
+
+</body>
+</html>

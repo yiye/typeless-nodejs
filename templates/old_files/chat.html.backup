@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>范例</title>
+        <script>
+            var socket;
+            /**
+            * 这个函数在文档加载后执行
+            * @return void
+            */
+            function init(){
+                log(window.location)
+                var host = "ws://"+window.location.host+window.location.pathname+"/ws"
+
+                try{
+                    //建立连接，并监听事件
+                    sock = new WebSocket(host);
+
+                    sock.onopen = function(evt){
+                        log("连接已建立:"+this.readyState);
+                    };
+                    sock.onmessage = function(evt){
+                        log("<b>接收到的数据："+evt.data+"</b>");
+                    };
+                    sock.onclose = function(evt){
+                        log("断开,信息是: "+this.readyState);
+                    };
+
+                }
+                catch(err){
+                    log(err.message);
+                }
+
+                document.getElementById("msg").focus();
+            }
+
+            /**
+            * 该函数用于关闭websocket 连接
+            * @return void
+            */
+            function quit(){
+                log("退出了#########################################！");
+                sock.close();
+                sock=null;
+            }
+
+            /**
+            * 改函数用于通过websocekt发送消息
+            * @return void
+            */
+
+            function send(){
+                var txt = document.getElementById("msg");
+                var msg = txt.value;
+
+                if(!msg){
+                    alert("不能发送空的内容");return;
+                }
+                txt.value = "";
+                txt.focus();//这个是干什么的？
+                try{
+                    sock.send(msg);
+                    log("sent: "+msg);
+                }
+                catch(err)
+                {
+                    log(err.message);
+                }
+            }
+
+            /** 
+            * 用于将信息写入div 元素,呈现在网页上
+            * @param String msg 定义写入的消息
+            * @retrurn void
+            */
+
+            function log(msg){
+                document.getElementById("log").innerHTML += "<br />" +msg;
+            }
+        </script>
+    </head>
+
+    <body onload="init()">
+        <div id="log"
+            style="border:1px dashed #c3c3c3; min-height:100px;"></div>
+        <input id ="msg" type="text"/>
+        <button onclick= "send();">发送</button>
+        <button onClick= "quit();">退出</button>
+    </body>
+</html>
+

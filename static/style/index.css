@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	/*background-color:#000;*/
+	/*background: -webkit-radial-gradient(#CEFFFF,#0FF,#0CF);*/
+	background: -webkit-radial-gradient(#589CF0,#3880D9);
+	/*background: -webkit-radial-gradient(#A7E4DA,#2989DA);*/
+	/*background: -webkit-radial-gradient(#EBF4FA,#D7E8F5,#B1D3EC);*/
+	/*background-color:#2799FA;*/
+	color:#FFF;
+	font-family:"黑体";
+	text-align:center;
+	}
+h1{
+	background-color:#3780D9;
+	width:160px;
+	height:45px;
+	/*border:#FFF 2px solid;*/
+	font-weight:400;
+	margin:70px auto;
+	line-height:45px;
+	border-radius:8px;
+	font-size:25px;
+	box-shadow:inset #407CC7 5px 5px 5px;
+	-webkit-box-shadow:inset #407CC7 5px 5px 5px;
+}
+h2{
+	font-size:30px;
+	font-weight:500;}
+a{
+	color:#FFF;
+	font-family:"黑体";
+	text-decoration:none;
+}
+img{
+	width:533px;
+	height:133px;
+	/*left:50%;
+	top:50%;*/
+	margin:150px auto 50px auto;
+	/*box-shadow:#000 3px 3px 3px;*/
+	}

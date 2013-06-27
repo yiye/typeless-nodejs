@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>typeless</title>
+		<link rel="stylesheet" href="/static/style/typeless.css" type="text/css">
+		<script type="text/javascript" src="/static/script/common.js"></script>
+		<script type="text/javascript" src="/static/script/appearance.js"></script>
+		<script type="text/javascript" src="/static/script/draw.js"></script>
+	</head>
+	<body>
+		<nav id="nav"></nav>
+		<div id="app">
+			<div id="toolbar">
+				<div id="style">
+					<div>
+						<div id="brush" class="tool" style="margin:2px;" onclick="sel_tool(0)"; title="brush"></div>
+						<div id="line" class="tool" style="margin:2px;" onclick="sel_tool(1)"; title="line"></div>
+					</div>
+					<div>
+						<div id="rect" class="tool" style="margin:2px;" onClick="sel_tool(2)"; title="rectangle"></div>
+						<div id="rectb" class="tool" style="margin:2px;" onClick="sel_tool(3)"; title="rectangle border"></div>
+					</div>
+					<div>
+						<div id="elli" class="tool" style="margin:2px;" onClick="sel_tool(4)"; title="ellipse"></div>
+						<div id="ellib" class="tool" style="margin:2px;" onClick="sel_tool(5)"; title="ellipse border"></div>
+					</div>
+					<div>
+						<div id="eraser" class="tool" style="margin: 2px;" onClick="sel_tool(6)"; title="eraser"></div>
+						<div id="claen" class="tool" style="margin:2px;" onClick="sel_tool(7)"; title="clean"></div>
+					</div>
+				</div>
+				<div id="linew" title="lineWidth">
+					<canvas id="lineShow" width="100"; height="50"></canvas>
+					<input type="range" id="lineRange" min="2" max="40" step="3" value="12" onChange="lineW()"/>
+					<!--  <output id="result" ></output>-->
+					<script type="text/javascript">
+						lineW();
+						</script>
+					</div>
+					<div id="color">
+						<!--  <input type="color" name="" value=''/>
+						<div id="selectColor" style="background-color:#000;" title=" selected color">
+
+						</div>-->
+						<div id="colorContent" style="float:left" title="colorContener">
+							<div class="colorElement" style="background-color: #000" onClick="sel_cor(0)"></div>
+							<div class="colorElement" style="background-color: #FFF " onClick="sel_cor(1)"></div>
+							<div class="colorElement" style="background-color: #804000" onClick="sel_cor(2)"></div>
+							<div class="colorElement" style="background-color: #F00" onClick="sel_cor(3)"></div>
+							<div class="colorElement" style="background-color: #FF8000" onClick="sel_cor(4)"></div>
+							<div class="colorElement" style="background-color: #FF8080" onClick="sel_cor(5)"></div>
+							<div class="colorElement" style="background-color: #FF0" onClick="sel_cor(6)"></div>
+							<div class="colorElement" style="background-color: #008000" onClick="sel_cor(7)"></div>
+							<div class="colorElement" style="background-color: #0080FF" onClick="sel_cor(8)"></div>
+							<div class="colorElement" style="background-color: #8080FF" onClick="sel_cor(9)"></div>
+
+						</div>
+
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div id="board">
+					<div class="draw"><!--说明一下 draw是画好后显示的层, drawPre是画的动0态显示<-->
+						<canvas id="draw" width="600px" height="700px">you can see it</canvas>
+						<canvas id="drawPre" width="600px" height="700px"></canvas>
+						<script type="text/javascript" >
+
+							/*ctx=document.getElementById('draw').getContext('2d');
+							  ctx.beginPath();
+							  ctx.moveTo(0,0);
+							  ctx.lineTo(600,700);
+							  ctx.stroke();*/
+						new Drawing('drawPre','draw');
+						</script>
+					</div>
+					<div class="type" id= 'type'>
+						<!--  <canvas id="type" width="300px" height="700px">I see you</canvas>
+						<canvas id="typePre" width="300px" height="700px"></canvas>  -->
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</body>
+	</html>
